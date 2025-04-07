@@ -1,0 +1,349 @@
+public class Identidade {
+
+    public static void main(String[] args) {
+        int[][] matriz = { // Declara e inicializa uma matriz 3x3
+            {1, 0, 0},
+            {0, 1, 0},
+            {0, 0, 1}
+
+        };
+        
+        
+        boolean identidade = true;
+        for (int linha = 0; linha < 10; linha++) {
+            for (int coluna = 0; coluna < 10; coluna++) {
+                if (linha == coluna && matriz[linha][coluna] != 1) {
+                    identidade = false;
+                }else if (linha != coluna && matriz[linha][coluna] != 0){
+                    identidade = false;
+                }
+                
+            }
+            
+        }
+        if(identidade) {
+            System.out.println("A matriz é uma matriz identidade.");
+            
+        }else{
+            System.out.println("A matriz não é uma matriz identidade.");
+        }
+        
+    }
+}
+
+
+
+public class MaiorMenorNúmero {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = { // Declara e inicializa uma matriz 4x4
+            {10, 5, 12, 3},
+            {15, 2, 9, 8},
+            {1, 16, 7, 14},
+            {4, 13, 11, 6}
+        };
+        int maior = matriz[0][0];
+        int menor = matriz[0][0];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (matriz[i][j] > maior) {
+                    maior = matriz[i][j];
+                }
+                if (matriz[i][j] < menor) {
+                    menor = matriz[i][j];
+                }
+            }
+        }
+        System.out.println("Maior elemento: " + maior);
+        System.out.println("Menor elemento: " + menor);
+    }
+}
+
+
+public class MediaDosElementosDaMatriz {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = { // Declara e inicializa uma matriz 4x4
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+        };
+        int soma = 0;
+        int totalElementos = 16;
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                soma += matriz[i][j];
+            }
+        }
+        double media = (double) soma / totalElementos;
+        System.out.println("A média dos elementos é: " + media);
+    }
+}
+
+
+public class MultiplicaçãoPorEscala {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in); // Cria um objeto Scanner
+        int[][] matriz = { // Declara e inicializa uma matriz 3x3
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        System.out.print("Digite um número escalar para multiplicar a matriz: ");
+        int escalar = scanner.nextInt();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matriz[i][j] *= escalar;
+            }
+        }
+        System.out.println("Matriz resultante:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+public class ProdutoDeMatrizes2x2 {
+
+    public static void main(String[] args) {
+
+        int[][] matrizA = { // Declara e inicializa a matriz A 2x2
+            {1, 2},
+            {3, 4}
+        };
+
+        int[][] matrizB = { // Declara e inicializa a matriz B 2x2
+            {5, 6},
+            {7, 8}
+        };
+        int[][] produto = new int[2][2];
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                for (int k = 0; k < 2; k++) {
+                    produto[i][j] += matrizA[i][k] * matrizB[k][j];
+                }
+            }
+        }
+        System.out.println("Matriz Produto:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print(produto[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+public class RotaçãoDeMatrizDe90Graus {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = { // Declara e inicializa uma matriz 4x4
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+        };
+        int[][] rotacionada = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                rotacionada[j][3 - i] = matriz[i][j];
+            }
+        }
+        System.out.println("Matriz Rotacionada 90 graus:");
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(rotacionada[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+public class Soma {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = { // Declara e inicializa uma matriz 3x3
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int soma = 0; // Inicializa a variável soma com 0
+        for (int i = 0; i < 3; i++) { // Itera sobre as linhas da matriz
+            for (int j = 0; j < 3; j++) { // Itera sobre as colunas da
+                soma += matriz[i][j]; // Adiciona o valor de cada elemento
+                //à soma
+            }
+        }
+        System.out.println("A soma de todos os elementos é: " + soma); //
+        //Exibe a soma total
+    }
+
+}
+
+
+
+
+public class SomaDiagonais3x3 {
+
+    public static void main(String[] args) {
+        int[][] matriz = { // Declara e inicializa uma matriz 3x3
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int somaPrincipal = 0;
+        int somaSecundaria = 0;
+        for (int i = 0; i < 3; i++) {
+            somaPrincipal += matriz[i][i];
+            somaSecundaria += matriz[i][2 - i];
+        }
+        System.out.println("Soma da diagonal principal: " + somaPrincipal);
+        System.out.println("Soma da diagonal secundária: "+ somaSecundaria);
+    }
+}
+
+
+
+
+public class SomaLinhasEColunas4x4 {
+
+    public static void main(String[] args) {
+        int[][] matriz = { // Declara e inicializa uma matriz 4x4
+            {1, 2, 3, 4},
+            {5, 6, 7, 8},
+            {9, 10, 11, 12},
+            {13, 14, 15, 16}
+        };
+        for (int i = 0; i < 4; i++) {
+            int somaLinha = 0;
+            int somaColuna = 0;
+
+            for (int j = 0; j < 4; j++) {
+                somaLinha += matriz[i][j];
+                somaColuna += matriz[j][i];
+            }
+            System.out.println("Soma da linha " + (i + 1) + ": " + somaLinha);
+            System.out.println("Soma da coluna " + (i + 1) + ": " + somaColuna);
+        }
+
+    }
+}
+
+
+
+
+public class SubtraçãoDeMatrizes {
+
+    public static void main(String[] args) {
+
+        int[][] matrizA = { // Declara e inicializa a matriz A 3x3
+            {9, 8, 7},
+            {6, 5, 4},
+            {3, 2, 1}
+        };
+
+        int[][] matrizB = { // Declara e inicializa a matriz B 3x3
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int[][] subtracao = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                subtracao[i][j] = matrizA[i][j] - matrizB[i][j];
+            }
+        }
+        System.out.println("Matriz Subtração:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(subtracao[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+
+
+public class Transposta {
+
+    public static void main(String[] args) {
+
+        int[][] matriz = { // Declara e inicializa uma matriz 3x3
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+        int[][] transposta = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                transposta[j][i] = matriz[i][j];
+            }
+        }
+        System.out.println("Matriz Transposta:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(transposta[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+métodos
+
+public class EX1 {
+    
+    public static void iniciarJogo(){
+            
+        System.out.println("Bem-Vindo ao jogo da adivinhação!");
+        System.out.println("Tente adivinhar o número que estou pensando, entre 1 a 100.");
+            
+    }
+    
+    public static int processarEntrada(){
+        
+        Scanner tc = new Scanner(System.in);
+        System.out.println("Digite seu palpite:");
+        return tc.nextInt();
+        
+    }
+    
+    public static boolean verificarVencedor(int palpite, int numeroSecreto){
+        
+        if(palpite == numeroSecreto){
+            
+            System.out.println("Parabéns você acertou o número!");
+            return true;
+        }else if (palpite < numeroSecreto){
+            System.out.println("O número é maior  que "+palpite);
+        }else {
+            
+            System.out.println("O número é menor que "+palpite);
+            
+        }
+        return false;
+        
+    }
